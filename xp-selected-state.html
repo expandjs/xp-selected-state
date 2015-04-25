@@ -7,12 +7,12 @@ The complete set of contributors may be found at https://expandjs.github.io/CONT
 -->
 
 <!--
-This component is used to add select capabilities on the context element.
+This element is used to add select capabilities on the context element.
 
-@component xp-selected-state
-@description This component is used to add select capabilities on the context element
+@element xp-selected-state
+@description This element is used to add select capabilities on the context element
 @extends template
-@mixin xp-targeter http://www.expandjs.com/components/xp-targeter
+@mixin xp-targeter http://www.expandjs.com/elements/xp-targeter
 
 @dependency polymer Polymer/polymer#^0.5
 @dependency expandjs ExpandJS/expandjs
@@ -26,7 +26,7 @@ This component is used to add select capabilities on the context element.
 <polymer-element name="xp-selected-state" extends="template" attributes="activateEvent context deep defaultSelected indexAttribute items itemSelector multi selected selectedAttribute selection switchable target">
 
     <script>
-        XPComponent({
+        XPElement({
 
             // MIXINS
             mixins: ['xp-targeter'],
