@@ -1,7 +1,7 @@
 {
   "name": "xp-selected-state",
   "license": "BSD-3-Clause",
-  "version": "0.8.2",
+  "version": "0.8.3",
   "description": "This element is used to add select capabilities on the context element.",
   "homepage": "http://www.expandjs.com/elements/xp-selected-state",
   "authors": [
