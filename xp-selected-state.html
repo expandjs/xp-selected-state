@@ -587,8 +587,8 @@ This element is used to add select capabilities on the context element.
             // OBSERVER
             activateEventChanged: function (pre, post) {
                 var self = this;
-                if (pre) { XP.unlisten(self.context, pre, self.handleEventBinded); }
-                if (post) { XP.listen(self.context, post, self.handleEventBinded = self.handleEvent.bind(self)); }
+                if (pre) { XP.unlisten(self.context, pre, self.handleEventBound); }
+                if (post) { XP.listen(self.context, post, self.handleEventBound = self.handleEvent.bind(self)); }
             },
 
             // OBSERVER
@@ -652,7 +652,7 @@ This element is used to add select capabilities on the context element.
             // LISTENER
             ready: function () {
                 var self = this;
-                self.handleEventBinded = self.handleEvent.bind(self);
+                self.handleEventBound = self.handleEvent.bind(self);
             },
 
             /*********************************************************************/
