@@ -204,7 +204,7 @@ This element is used to add select capabilities on the context element.
                 if (!item) { return; }
 
                 // Delaying
-                XP.requestAnimationFrame(function () {
+                XP.delay(function () {
 
                     // Checking
                     if (!self.isSelectable(item)) { return; }
@@ -316,7 +316,7 @@ This element is used to add select capabilities on the context element.
                 if (!item) { return; }
 
                 // Delaying
-                XP.requestAnimationFrame(function () {
+                XP.delay(function () {
 
                     // Checking
                     if (!self.isUnselectable(item, force)) { return; }
@@ -614,7 +614,7 @@ This element is used to add select capabilities on the context element.
                 var self = this, initialized = self.initialized;
                 self.initialized = self.initialized || self.items.length;
                 self.fire('xp-items-change', {firer: self.context, items: self.items});
-                XP.requestAnimationFrame(initialized ? XP.mock() : function () {
+                XP.delay(initialized ? XP.mock() : function () {
                     if (XP.isInput(self.defaultSelected, true)) { self.select(self.defaultSelected); return; }
                     if (XP.isInput(self.selected, true)) { self.select(self.selected); }
                 });
@@ -638,7 +638,7 @@ This element is used to add select capabilities on the context element.
             // OBSERVER
             selectionChanged: function () {
                 var self = this;
-                XP.requestAnimationFrame(function () {
+                XP.delay(function () {
                     self.context.fire('xp-selection-changed', {firer: self.context, selection: self.selection, selected: self.selected, isMulti: self.multi, isSwitchable: self.multi || self.switchable});
                     self.items.forEach(function (item) { XP.setAttribute(item, self.selectedAttribute, self.isSelected(item, true)); });
                 });
