@@ -36,6 +36,15 @@ This element is used to add select capabilities on the context element.
             /*********************************************************************/
 
             /**
+             * Fired when the items change.
+             *
+             * @event xp-items-change
+             * @param {Element} firer
+             * @param {Array} items
+             * @bubbles
+             */
+
+            /**
              * Fired on item selection.
              *
              * @event xp-select
@@ -602,9 +611,10 @@ This element is used to add select capabilities on the context element.
 
             // OBSERVER
             itemsChanged: function () {
-                var self = this;
-                if (self.items.length && !self.initialized) { self.initialized = true; } else { return; }
-                XP.requestAnimationFrame(function () {
+                var self = this, initialized = self.initialized;
+                self.initialized = self.initialized || self.items.length;
+                self.fire('xp-items-change', {firer: self.context, items: self.items});
+                XP.requestAnimationFrame(initialized ? XP.mock() : function () {
                     if (XP.isInput(self.defaultSelected, true)) { self.select(self.defaultSelected); return; }
                     if (XP.isInput(self.selected, true)) { self.select(self.selected); }
                 });
