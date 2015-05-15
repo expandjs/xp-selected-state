@@ -613,7 +613,7 @@ This element is used to add select capabilities on the context element.
             // OBSERVER
             itemsChanged: function () {
                 var self = this, initialized = self.initialized;
-                self.initialized = self.initialized || self.items.length;
+                self.initialized = self.initialized || self.items.length > 0;
                 self.fire('xp-items-change', {firer: self.context, items: self.items});
                 XP.delay(initialized ? XP.mock() : function () {
                     if (XP.isInput(self.defaultSelected, true)) { self.select(self.defaultSelected); return; }
