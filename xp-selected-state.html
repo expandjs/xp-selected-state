@@ -389,7 +389,7 @@ This element is used to add select capabilities on the context element.
                 // CASE: Items changed
                 self.selection = self.multi ? XP.overwrite(self.selection, XP.intersection(self.items, self.selection)) : (XP.includes(self.items, self.selection) ? self.selection : null);
                 self.selected  = self.multi ? XP.overwrite(self.selected, XP.map(function (item) { return self.findIndex(item, true); })) : self.findIndex(self.selection, true) || null;
-                self.selecting = self.selected !== selected;
+                self.selecting = self.selected !== selected && XP.isNullable(self.selected) !== XP.isNullable(selected);
                 self.mutating  = false;
 
                 return self;
