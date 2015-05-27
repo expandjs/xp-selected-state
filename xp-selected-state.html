@@ -675,6 +675,9 @@ This element is used to add select capabilities on the context element.
             // HANDLER
             handleEvent: function (event) {
 
+                // Checking
+                if (event.type === 'click' && event.button) { return; }
+
                 // Vars
                 var self       = this,
                     item       = self.findEvent(event.target),
