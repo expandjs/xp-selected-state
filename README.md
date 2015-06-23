@@ -1,3 +1,3 @@
 # xp-selected-state
 
-See the [`documentation page`](http://expandjs.com/elements/xp-selected-state) for more information.
+This repository **is deprected**. Use [`xp-selected-behavior`](https://github.com/expandjs/xp-selected-behavior) instead.
